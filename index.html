@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<meta property='og:title' content='Putting People in Their Place: Affordance-Aware Human Insertion into Scenes. CVPR2023'/>
+<meta property='og:image' content='https://sumith1896.github.io/affordance-insertion/static/images/thumbnail.png'/>
+<meta property='og:description' content='Photo-realistic affordance-aware human insertion into scenes. CVPR2023'/>
+<meta property='og:url' content='https://sumith1896.github.io/affordance-insertion'/>
+<meta property='og:image:width' content='1988' />
+<meta property='og:image:height' content='1004' />
+<!-- TYPE BELOW IS PROBABLY: 'website' or 'article' or look on https://ogp.me/#types -->
+<meta property="og:type" content='website'/>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNGWK4WJ99"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XNGWK4WJ99');
+  </script>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Affordance-Aware Human Insertion into Scenes.">
+  <meta name="keywords" content="Affordance, Affordance-Insertion, Human Insertion, Image Synthesis, Self-supervision, Stable-Diffusion">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Putting People in Their Place: Affordance-Aware Human Insertion into Scenes</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/tab_gallery.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="stylesheet" href="juxtapose/css/juxtapose.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/magnifier.js"></script>
+  <link href="https://fonts.cdnfonts.com/css/menlo" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/image_card_fader.css">
+  <link rel="stylesheet" href="./static/css/image_card_slider.css">
+
+</head>
+
+<style>
+  @import url('https://fonts.cdnfonts.com/css/menlo');
+</style>
+
+<body>
+  <section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Putting People in Their Place:<br> Affordance-Aware Human Insertion into Scenes</h1>
+          <div class="parent-container">
+          <div class="is-size-5 publication-authors authors-container">
+            <span class="author-block">
+              <a href="https://cs.stanford.edu/~sumith/">Sumith Kulal</a><sup>1</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="https://timothybrooks.com/about">Tim Brooks</a><sup>2</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="http://theory.stanford.edu/~aiken/">Alex Aiken</a><sup>1</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="https://jiajunwu.com/">Jiajun Wu</a><sup>1</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="https://jimeiyang.github.io/">Jimei Yang</a><sup>3</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="https://research.adobe.com/person/jingwan-lu/">Jingwan Lu</a><sup>3</sup>&nbsp;</span>
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~efros/">Alexei A. Efros</a><sup>2</sup>&nbsp;</span>
+            <span class="author-block">
+              <a href="http://krsingh.cs.ucdavis.edu/">Krishna Kumar Singh</a><sup>3</sup> 
+            </span>
+          </div>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Stanford University,</span>
+            <span class="author-block"><sup>2</sup>UC Berkeley,</span>
+            <span class="author-block"><sup>3</sup>Adobe Research</span>
+          </div>
+
+          <div class="is-size-5 publication-venue">
+            in CVPR 2023
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="static/paper/affordance_insertion_cvpr2023.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="static/paper/affordance_insertion_cvpr2023.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/adobe-research/affordance-insertion"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>              
+              <span class="link-block">
+                <a href="#bibtex"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-obp"></i>
+                  </span>
+                  <span>BibTex</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <div class="content has-text-justified">
+        <p>
+          <b>Photo-realistic affordance-aware human insertion into scenes.</b> We train a 1B-parameter diffusion model that achieves photo-realistic human insertion into scenes in an affordance-aware manner. We propose a novel self-supervised training scheme that learns by inpainting humans from two different frames of a video. When trained on a dataset of 2.4 million clips, our model is capable of inserting diverse humans into diverse scenes. Additionally, at inference time, the model can be prompted to perform person hallucination, scene hallucination, partial body completion and cloth swapping.
+          <br> 
+        </p>
+      </div>
+        <div class="item item-t2i0">
+          <img id="myt2i0" src="./static/images/teaser.png"
+          class="interpolation-image"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We study the problem of inferring scene affordances by presenting a method for realistically inserting people into scenes. Given a scene image with a marked region and an image of a person, we insert the person into the scene while respecting the scene affordances. Our model can infer the set of realistic poses given the scene context, re-pose the reference person, and harmonize the composition. We set up the task in a self-supervised fashion by learning to re-pose humans in video clips. We train a large-scale diffusion model on a dataset of 2.4M video clips that produces diverse plausible poses while respecting the scene context. Given the learned human-scene composition, our model can also hallucinate realistic people and scenes when prompted without conditioning and also enables interactive editing. A quantitative evaluation shows that our method synthesizes more realistic human appearance and more natural human-scene interactions than prior work.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<section class="section">
+  
+    <!--/ Matting. -->
+    <div class="container is-max-desktop">
+    
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Architecture Overview</h2>
+        <br>
+        
+        <div class="content has-text-centered">
+            <img src="./static/images/arch.png">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            We source two random frames from a video clip. We mask out the person in the first frame and use the person from the second frame as conditioning to inpaint the image. We concatenate the latent features of the background image and rescaled mask along with the noisy image to the denoising UNet. Reference person embeddings (CLIP ViT-L/14) are passed via cross-attention. 
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Model Samples</h2>
+
+        <h3 class="title is-4 has-text-justified">Same person in different scenes.</h3>
+          <div class="container is-max-desktop">
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item">
+                <img src="./static/images/collage_person_00103.png"
+                class="interpolation-image"/>
+              </div>
+              <div class="item">
+                <img src="./static/images/collage_person_00129.png"
+                class="interpolation-image"/>
+              </div>
+              <div class="item">
+                <img src="./static/images/collage_person_00098.png"
+                class="interpolation-image"/>
+              </div>
+              <div class="item">
+                <img src="./static/images/collage_person_00006.png"
+                class="interpolation-image"/>
+              </div>
+            </div>
+          </div>
+        
+        <br>
+
+        <h3 class="title is-4 has-text-justified">Different people in same scene.</h3>
+        <div class="container is-max-desktop">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <img src="./static/images/collage1.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item">
+              <img src="./static/images/collage2.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item">
+              <img src="./static/images/collage3.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item">
+              <img src="./static/images/collage4.png"
+              class="interpolation-image"/>
+            </div>
+          </div>
+        </div>
+        
+        <br>
+
+        <h3 class="title is-4 has-text-justified">Masks beyond bounding boxes.</h3>
+        <div class="content has-text-justified">
+          <p>
+            In addition to bounding boxes, we support generic masks like scribbles and segmentation masks.
+          </p>
+        </div>
+        <div class="container is-max-desktop">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-car">
+              <img src="./static/images/collage9.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-house">
+              <img src="./static/images/collage10.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-house">
+              <img src="./static/images/collage11.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-male">
+              <img src="./static/images/collage12.png"
+              class="interpolation-image"/>
+            </div>
+          </div>
+        </div>
+        
+        <br>
+
+        <h3 class="title is-4 has-text-justified">Person hallucination.</h3>
+        <div class="content has-text-justified">
+          <p>
+            At inference time, the model can be prompted to perform person hallucination by passing an empty scene conditioning.
+          </p>
+        </div>
+        <div class="container is-max-desktop">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-car">
+              <img src="./static/images/collage17.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage18.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage19.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage20.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage21.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage22.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage23.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage24.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage25.png"
+              class="interpolation-image"/>
+            </div>
+          </div>
+        </div>
+        
+        <br>
+
+        <h3 class="title is-4 has-text-justified">Person hallucination baselines.</h3>
+        <div class="content has-text-justified">
+          <p>
+            Shown here are baseline comparisons from DALL-E 2, Stable-Diffusion v1.5 and ours (from left to right). 
+          </p>
+        </div>
+        <div class="container is-max-desktop">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-car">
+              <img src="./static/images/collage35.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage34.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage36.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage37.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage38.png"
+              class="interpolation-image"/>
+            </div>
+          </div>
+        </div>
+        
+        <br>
+
+        <h3 class="title is-4 has-text-justified">Scene hallucination.</h3>
+        <div class="content has-text-justified">
+          <p>
+            At inference time, the model can be prompted to perform scene hallucination by passing an empty person conditioning.
+          </p>
+        </div>
+        <div class="container is-max-desktop">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-car">
+              <img src="./static/images/collage27.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage29.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage26.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage30.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage31.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage32.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage33.png"
+              class="interpolation-image"/>
+            </div>
+          </div>
+        </div>
+        
+        <br>
+
+        <h3 class="title is-4 has-text-justified">Scene hallucination baselines.</h3>
+        <div class="content has-text-justified">
+          <p>
+            Shown here are baseline comparisons from DALL-E 2, Stable-Diffusion v1.5 and ours (from left to right). 
+          </p>
+        </div>
+        <div class="container is-max-desktop">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-car">
+              <img src="./static/images/collage41.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage39.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage40.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage42.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-car">
+              <img src="./static/images/collage43.png"
+              class="interpolation-image"/>
+            </div>
+          </div>
+        </div>
+        
+        <br>
+
+        <h3 class="title is-4 has-text-justified">Partial-body completion.</h3>
+        <div class="container is-max-desktop">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-car">
+              <img src="./static/images/collage6.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-house">
+              <img src="./static/images/collage7.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-house">
+              <img src="./static/images/collage8.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-male">
+              <img src="./static/images/collage5.png"
+              class="interpolation-image"/>
+            </div>
+          </div>
+        </div>
+        
+        <br>
+
+        <h3 class="title is-4 has-text-justified">Cloth swapping.</h3>
+        <div class="container is-max-desktop">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-car">
+              <img src="./static/images/collage13.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-house">
+              <img src="./static/images/collage16.png"
+              class="interpolation-image"/>
+            </div>
+            <div class="item item-male">
+              <img src="./static/images/collage15.png"
+              class="interpolation-image"/>
+            </div>
+          </div>
+        </div>
+
+
+    <br>
+
+    <div class="container is-max-desktop">
+    
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Related works</h2>
+          <div class="content has-text-justified">
+            <p>
+              <li>Tim Brooks and Alexei A. Efros. <a href="https://arxiv.org/abs/2112.06909">Hallucinating Pose-Compatible Scenes.</a> In European Conference on Computer Vision (ECCV), 2022.</li><br>
+              <li>Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Bjorn Ommer. <a href="https://arxiv.org/abs/2112.10752">High-resolution Image Synthesis with Latent Diffusion Models.</a> In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2022.</li><br>
+              <li>Xiaolong Wang, Rohit Girdhar, and Abhinav Gupta. <a href="https://arxiv.org/abs/1804.03080">Binge Watching: Scaling Affordance Learning from Sitcoms.</a> In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.</li><br>
+              <li>Xueting Li, SIfei Liu, Kihwan Kim, Xiaolong Wang, Ming-Hsuan Yang, and Jan Kautz. <a href="https://arxiv.org/abs/1903.05690">Putting Humans in a Scene: Learning Affordance in 3D Indoor Environments.</a> In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2019.</li><br>
+              <li>Vincent Delaitre, David F Fouhey, Ivan Laptev, Josef Sivic, Abhinav Gupta, and Alexei A. Efros. <a href="https://link.springer.com/chapter/10.1007/978-3-642-33783-3_21">Scene Semantics from Long-term Observation of People</a>. In European Conference on Computer Vision (ECCV), 2012.</li><br>
+              <li>Abhinav Gupta, Scott Satkin, Alexei A. Efros, and Martial Hebert. <a href="http://www.cs.cmu.edu/~abhinavg/papers/0586.pdf">From 3D Scene Geometry to Human Workspace.</a> In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2011.</li><br>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Acknowledgements</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We are grateful to Fabian Caba Heilbron, Tobias Hinz, Kushal Kafle, Nupur Kumari, Yijun Li and Markus Woodson for insightful discussions regarding data and training pipeline. This work was partly done by Sumith Kulal during an internship at Adobe Research. Additional funding provided by ONR MURI and NSF GRFP.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title"><a id="bibtex">BibTeX</a></h2>
+    <pre><code>@inproceedings{kulal2023affordance,
+  author    = {Kulal, Sumith and Brooks, Tim and Aiken, Alex and Wu, Jiajun and Yang, Jimei and Lu, Jingwan and Efros, Alexei A. and Singh, Krishna Kumar},
+  title     = {Putting People in Their Place: Affordance-Aware Human Insertion into Scenes},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website inspired by <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://mingukkang.github.io/GigaGAN/">GigaGAN</a> and adapted from the following <a href="https://github.com/nerfies/nerfies.github.io">source code</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="juxtapose/js/juxtapose.js"></script>
+
+<script>
+
+</script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>    
+
+</body>
+</html>
