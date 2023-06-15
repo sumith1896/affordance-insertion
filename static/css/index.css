@@ -85,14 +85,22 @@ body {
 
 .authors-container {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   overflow-x: auto; /* Adds a horizontal scrollbar if the content overflows */
   justify-content: center; /* Center-align the child elements (authors) horizontally */
-  min-width: 106%;
 }
 
 .author-block {
   display: inline-block;
+  white-space: nowrap; /* Prevents text within an author-block from wrapping to a new line */
+
+}
+
+/* On screens that are 1024px or wider, use no wrapping */
+@media screen and (min-width: 1024px) {
+  .authors-container {
+    flex-wrap: nowrap;
+  }
 }
 
 .publication-banner img {
